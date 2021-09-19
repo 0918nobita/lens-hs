@@ -1,0 +1,43 @@
+name:                lens-hs
+version:             0.1.0.0
+github:              "0918nobita/lens-hs"
+license:             BSD3
+author:              "Kodai Matsumoto"
+maintainer:          "nobita.0918@gmail.com"
+copyright:           "2021 Kodai Matsumoto"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+description:         Please see the README on GitHub at <https://github.com/0918nobita/lens-hs#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- lens
+- template-haskell
+
+library:
+  source-dirs: src
+
+executables:
+  lens-hs-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - lens-hs
+
+tests:
+  lens-hs-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - lens-hs
